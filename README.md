@@ -1,4 +1,4 @@
-## Sam Loyd Chess Puzzle Viewer
+# Sam Loyd Chess Puzzle Viewer
 
 A simple static website for browsing chess problems in three sections:
 
@@ -21,50 +21,61 @@ It does **not** include:
 ## How to use
 
 If you generate puzzle images locally, the site expects them in this structure:
-
-puzzles/
-├── 1/
+```
+puzzles
+├── 1
 │   ├── 1_puzzle.png
 │   ├── 1_solution.png
 │   └── ...
-├── 2/
+├── 2
 │   ├── 1_puzzle.png
 │   ├── 1_solution.png
 │   └── ...
-└── 3/
+└── 3
     ├── 1_puzzle.png
     ├── 1_solution.png
     └── ...
+```
 
-Section folders correspond to:
-1 = Two Move Mates
-2 = Three Move Mates
+Section folders correspond to:\
+1 = Two Move Mates\
+2 = Three Move Mates\
 3 = Four Move Mates
 
-extract.py is a helper script for local extraction of puzzle diagrams and solution images from selected PDF page ranges.
+extract.py is a helper script for local extraction of puzzle diagrams and solution images from selected PDF page ranges.\
 Configure these values at the top of the script:
+```
 PDF_FILE = "puzzle_king.pdf"
 OUTPUT_DIR = "puzzles"
 PAGE_RANGES = [(13, 46), (49, 119), (123, 156)]
+```
 
 The generated files should follow this naming pattern:
+```
 1_puzzle.png
 1_solution.png
 2_puzzle.png
 2_solution.png
+```
 
 And you are done.
 
 ## Running Locally
 
 From the project directory:
+```
 python3 -m http.server 8000
+```
 
 Then open:
+```
 http://localhost:8000
+```
 
 To listen on all network interfaces:
+```
 python3 -m http.server 8000 --bind 0.0.0.0
+```
 
 ## Copyright Notice
 
